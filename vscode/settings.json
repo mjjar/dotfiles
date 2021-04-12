@@ -1,0 +1,37 @@
+{
+  "editor.fontSize": 18,
+  "files.autoSave": "afterDelay",
+  "workbench.colorTheme": "Night Owl (No Italics)",
+  "ruby.intellisense": "rubyLocate",
+  "ruby.useBundler": true, //run non-lint commands with bundle exec
+  "ruby.useLanguageServer": true, // use the internal language server (see below)
+  "editor.lineNumbers": "on",
+  "editor.tabSize": 2,
+  "breadcrumbs.enabled": false,
+  "editor.minimap.enabled": false,
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.hideCursorInOverviewRuler": true,
+  "window.menuBarVisibility": "compact", // use rubocop for formatting
+  "vim.leader": "<space>",
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    },
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<leader>", "o", "r"],
+      "commands": [
+          "workbench.action.terminal.new",
+      ]
+    },
+    {
+      "before": ["<leader>", "k", "r"],
+      "commands": [
+          "workbench.action.terminal.kill"
+      ]
+    }
+  ]
+}
