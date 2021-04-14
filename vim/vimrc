@@ -30,7 +30,7 @@ nmap <leader>vr :sp $MYVIMRC<cr>
 nmap <leader>so :source $MYVIMRC<cr>
 noremap ss :w<cr>
 
-set number
+set relativenumber
 
 imap jk <esc>
 imap kj <esc>
