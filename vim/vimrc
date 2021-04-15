@@ -18,10 +18,12 @@ Plug 'tpope/vim-repeat'
 Plug 'preservim/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
+Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
-colorscheme moonfly
+colorscheme gruvbox
 filetype plugin indent on
 
 let mapleader = "\<Space>"
@@ -31,6 +33,9 @@ nmap <leader>so :source $MYVIMRC<cr>
 noremap ss :w<cr>
 
 set relativenumber
+set nowrap
+set termguicolors
+se t_Co=256
 
 imap jk <esc>
 imap kj <esc>
@@ -63,3 +68,8 @@ map <Leader>a :call RunAllSpecs()<CR>
 let g:VtrUseVtrMaps = 1
 nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<cr>
 nnoremap <leader>osr :VtrOpenRunner {'orientation': 'h', 'percentage': 50}<cr>
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
