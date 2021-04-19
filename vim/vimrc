@@ -1,14 +1,11 @@
 set nocompatible
 filetype off
 
-
-set rtp+=~/.vim/bundle/Vundle.vim
 set tags=ctags
 
 call plug#begin('~/.vim/plugged')
 
 Plug 'bluz71/vim-moonfly-colors'
-Plug 'VundleVim/Vundle.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
@@ -20,8 +17,18 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
 Plug 'morhetz/gruvbox'
+Plug 'dikiaap/minimalist'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
+
+set relativenumber
+set nowrap
+set smarttab
+set cindent
+set tabstop=2
+set shiftwidth=2
+set termguicolors
 
 colorscheme gruvbox
 filetype plugin indent on
@@ -32,10 +39,6 @@ nmap <leader>vr :sp $MYVIMRC<cr>
 nmap <leader>so :source $MYVIMRC<cr>
 noremap ss :w<cr>
 
-set relativenumber
-set nowrap
-set termguicolors
-se t_Co=256
 
 imap jk <esc>
 imap kj <esc>
@@ -73,3 +76,5 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+nmap <C-n> :NERDTreeToggle<CR>
