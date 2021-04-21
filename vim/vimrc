@@ -77,4 +77,5 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-nmap <C-n> :NERDTreeToggle<CR>
+inoremap <silent><expr> <c-space> coc#refresh()
+map <C-n> :NERDTreeToggle<CR>
