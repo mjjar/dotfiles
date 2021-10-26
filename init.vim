@@ -1,10 +1,32 @@
+# 1 "/home/milosz/.config/nvim/init.vim"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 31 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 32 "<command-line>" 2
+# 1 "/home/milosz/.config/nvim/init.vim"
+"=== SET CONFIG ==="
 set nocompatible
-filetype off
-
+set relativenumber
+set nowrap
+set smarttab
+set cindent
+set tabstop=2
+set shiftwidth=2
+"set termguicolors Turned of as GNOME Terminal is using grovbox theme
+set nobackup "This is needed to make neovim work with Parcel"
+set nowritebackup "This is needed to make neovim work with Parcel"
 set tags=ctags
 
-call plug#begin('~/.vim/plugged')
+filetype plugin indent on
+filetype off
+"=== END ===
 
+"=== PLUGINS ===
+"curl sth sth comment shit to not forget about vim.plug what i just did
+call plug#begin('~/.config/nvim/plugged')
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'morhetz/gruvbox'
 Plug 'bluz71/vim-moonfly-colors'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-rails'
@@ -15,29 +37,19 @@ Plug 'tpope/vim-repeat'
 Plug 'preservim/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
-Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
 Plug 'morhetz/gruvbox'
 Plug 'dikiaap/minimalist'
 Plug 'sheerun/vim-polyglot'
-Plug 'faith/vim-go'
-
 call plug#end()
+"=== END ===
 
-set relativenumber
-set nowrap
-set smarttab
-set cindent
-set tabstop=2
-set shiftwidth=2
-set termguicolors
-
-"=== This is need to make Parcel work ==="
-set nobackup
-set nowritebackup
-
+"=== THEME CONFIG ===
+set background=light
+let g:gruvbox_contrast_light='soft'
 colorscheme gruvbox
-filetype plugin indent on
+"=== END ===
 
+"=== MAPINGS ===
 let mapleader = "\<Space>"
 
 nmap <leader>vr :sp $MYVIMRC<cr>
@@ -88,7 +100,7 @@ map <C-n> :NERDTreeToggle<CR>
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
   let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
+  return !col || getline('.')[col - 1] =~ '\s'
 endfunction
 
 inoremap <silent><expr> <Tab>
@@ -109,3 +121,4 @@ function! LineEnd()
   endif
  return ""
 endfunction
+"=== END ===
