@@ -16,7 +16,7 @@ if not_in_tmux; then
   tmux new-session -As "$session_name"
 else
   if ! session_exists; then
-    (TMUX='' tmux new-session -Ad -s "$session_name")
+    (TMUX='' tmux new-session -s milosz -Ad -s "$session_name")
   fi
   tmux switch-client -t "$session_name"
 fi
