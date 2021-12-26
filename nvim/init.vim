@@ -1,4 +1,4 @@
-"=== SET CONFIG ===" set nocompatible
+"=== SET CONFIG ==="
 set cursorline "highlight the current line
 set relativenumber
 set number
